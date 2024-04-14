@@ -702,9 +702,19 @@
             
         </script>
 
-        <script>
-        window.location.href = "login.html"; // Mengarahkan ke halaman login.html
-    </script>
+<script>
+    // Memeriksa apakah pengguna sudah login sebelumnya
+    // Anda dapat menggunakan sesi, cookies, atau local storage untuk ini
+    var isLoggedIn = false; // Ganti dengan logika Anda sendiri untuk memeriksa login
+
+    // Jika pengguna sudah login, arahkan langsung ke halaman dashboard atau halaman yang sesuai
+    if (isLoggedIn) {
+        window.location.href = "index.html"; // Ganti dashboard.html dengan URL halaman yang sesuai
+    } else {
+        // Jika pengguna belum login, arahkan ke halaman login.html
+        window.location.href = "login.html";
+    }
+</script>
         <!-- Purchase Button -->
         
     </body>
