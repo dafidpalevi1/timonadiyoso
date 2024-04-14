@@ -4537,43 +4537,37 @@ aside,
   flex-wrap: wrap;
   justify-content: center;
   padding: 5px;
-  height: 825px; /* Tinggi default */
 }
 
 .video-container {
-  flex: 0 0 calc(33.33% - 30px);
-  max-width: calc(33.33% - 30px);
-  margin-bottom: 30px;
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  margin: 10px;
   position: relative;
-  overflow: hidden; /* Tambahkan properti overflow: hidden; */
+  overflow: hidden;
+  height: auto;
 }
 
-.video-container iframe {
+video {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  max-width: 605px;
-  min-width: 325px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
   .video-container {
-    flex-basis: calc(33.33% - 30px);
-    max-width: calc(33.33% - 30px);
+      flex: 0 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
   }
 }
 
-@media screen and (max-width: 600px) {
-  .video-grid {
-    height: auto; /* Setel ulang tinggi agar mengikuti konten */
-  }
-  
+@media screen and (max-width: 480px) {
   .video-container {
-    flex: 0 0 calc(100% - 30px);
-    max-width: calc(100% - 30px);
-    height: 905px; /* Atur tinggi video sesuai kebutuhan */
+      flex: 0 0 calc(100% - 20px);
+      max-width: calc(100% - 20px);
   }
 }
+
 
 /*----------------------------------------*/
 .testimonial-area .section-title {
