@@ -176,6 +176,10 @@ p {
   text-shadow: none;
 }
 
+.center-text {
+  text-align: center;
+
+}
 /*--
     - Input Placeholder
 -----------------------------------------*/
@@ -465,6 +469,7 @@ p {
   h4 {
     font-size: 16px;
     line-height: 1.2;
+    text-align: center;
   }
   h5 {
     font-size: 14px;
@@ -4565,10 +4570,26 @@ video {
 
 @media screen and (max-width: 480px) {
   .video-container {
-      flex: 0 0 calc(100% - 20px);
-      max-width: calc(100% - 20px);
+    width: 45%; /* Ubah lebar agar dapat menampilkan dua video dalam satu baris */
+    min-width: initial; /* Hapus nilai min-width yang tidak perlu */
+    cursor: pointer;
+    margin: 10px; /* Sesuaikan margin agar rapi dan sejajar */
+    transition: 0.2s ease;
+    position: relative;
+    display: inline-block; /* Mengubah tampilan menjadi inline-block agar dapat menampilkan dua video dalam satu baris */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam perhitungan lebar */
+    vertical-align: top; /* Menjaga konsistensi vertikal */
+  }
+  
+  h4, p {
+    font-size: 16px; /* Ukuran font yang tetap sama untuk keterbacaan yang baik */
+    line-height: 1.5; /* Nilai relatif untuk line-height */
+    margin: 10px; /* Margin yang konsisten di semua sisi */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam perhitungan lebar */
   }
 }
+
+
 
 
 /*----------------------------------------*/
