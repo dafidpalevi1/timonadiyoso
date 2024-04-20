@@ -1,31 +1,17 @@
-/* Demo purposes only */
-$(".hover").mouseleave(
-    function() {
-      $(this).removeClass("hover");
+let loadMoreBtn = document.querySelector('.load-more-btn #load-more-btn');
+let currentItem = 3;
+
+loadMoreBtn.onclick = () => {
+    let videos = document.querySelectorAll('.video-grid .video-container');
+
+    for (let i = currentItem; i < currentItem + 3; i++) {
+        if (i < videos.length) {
+            videos[i].style.display = "inline-block";
+        } else {
+            loadMoreBtn.style.display = "none";
+            break;
+        }
     }
-  );
-// Fungsi untuk mengirim kode OTP
-function sendOTP(phoneNumber, otp) {
-  // Simulasi pengiriman OTP (gantikan dengan logika pengiriman nyata)
-  console.log("OTP sent to " + phoneNumber + ": " + otp);
-}
 
-// Event listener untuk tombol kirim OTP
-document.getElementById("send-otp-btn").addEventListener("click", function() {
-  var phoneNumber = document.getElementById("phone").value;
-  
-  // Generate OTP
-  var otp = generateOTP();
-  
-  // Kirim OTP
-  sendOTP(phoneNumber, otp);
-  
-  // Simpan OTP di local storage untuk verifikasi nantinya
-  localStorage.setItem("otp", otp);
-});
-
-// Fungsi untuk menghasilkan kode OTP acak
-function generateOTP() {
-  // Generate 6-digit random OTP (simulated for demonstration)
-  return Math.floor(100000 + Math.random() * 900000).toString();
-}
+    currentItem += 3;
+};
